@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ETF SELECTION</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">ETF SELECTION</h1>
+    <form method='POST'>
+    <select multiple name="option" width="300px">
+      {% for o in option_list %}
+          <option value="{{ o }}" SELECTED>{{ o }}</option>
+      {% endfor %}
+      </select>
+
+      &nbsp;
+      &nbsp;
+
+      <input name="days" type="number"> Projection Days</input>
+      </td>
+      <p>
+      <p>
+        
+      <td>
+          <input class="button1" type="submit" value="Select">
+      </td>
+    </form>
+  </div>
+  {% for i in item_list %}
+    <!--"{{ i }}"-->
+    <img src="{{ sub_img_path }}{{ i }}.png" alt="{{ i }}">
+    <a href="{{ sub_img_path }}Future{{ i }}.csv">Future Projections</a>
+  {% endfor %}
+</body>
+</html>
